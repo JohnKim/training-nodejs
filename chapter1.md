@@ -60,7 +60,7 @@ $ node server.js
 
 서버가 실행되었고, 웹브라우저에서 `localhost:3000` 으로 접속해서 확인합니다.
 
-`http` 는 Node.js 에서 기본적으로 제공하는 기능으로, 내장 모듈이라고도 합니다.   
+`http` 는 Node.js 에서 기본적으로 제공하는 기능으로, 내장 모듈이라고도 합니다.  
 API 문서를 통해 제공되는 다양한 내장 모듈을 확인합니다.  
 [https://nodejs.org/en/docs/](https://nodejs.org/en/docs/)
 
@@ -82,6 +82,44 @@ module.exports = function () {
 ```js
 const http = require('http');
 const hello = require('./hello');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end(hello());
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+```
+
+만약 여러개의 함수를 제공하는 모듈을 만들기 위해서는 exports 를 사용합니다.
+
+`hello2.js` 파일을 생성하고, 아래와 같이 작성합니다.
+
+```js
+exports.sum = function(a, b) {
+  return a+b;
+}
+
+exports.avg = function(a, b) {
+  return (a+b)/2;
+}
+
+exports.hello = function() {
+  return 'Hello World';
+}
+```
+
+그리고, hello2 모듈을 가져와 사용하도록 server.js 를 수정합니다.
+
+```js
+const http = require('http');
+const hello = require('./hello2');
 
 const hostname = '127.0.0.1';
 const port = 3000;
