@@ -33,23 +33,23 @@ app.delete('/user/:userId', function (req, res) {
 
 개발한 서버에 직접 API 를 호출하여 테스트 하기 위해서 API 테스트 도구를 활용하면 어렵지 않게 할 수 있습니다.
 
-* https://advancedrestclient.com/
-* https://www.getpostman.com/
+* [https://advancedrestclient.com/](https://advancedrestclient.com/)
+* [https://www.getpostman.com/](https://www.getpostman.com/)
 
 Chrome 앱 또는 Desktop 어플리케이션으로 설치하여 HTTP Method 를 변경해가면 테스트 할 수 있습니다.
 
 ### request.params
 
-URI 에서 포함된 대입된 값을 가져오기 위하여 request.params 를 사용할 수 있습니다. 
+URI 에서 포함된 대입된 값을 가져오기 위하여 request.params 를 사용할 수 있습니다.
 
-예를 들어   
-\[GET\] http://localhost:3000/user/13579 를 호출하여 User ID 가 13579 인 사용자 정보를 조회하는 경우라면, '/user/:userId' 의 userId 는 request.params.userId 로 가져올 수 있습니다. 
+예를 들어  
+\[GET\] [http://localhost:3000/user/13579](http://localhost:3000/user/13579) 를 호출하여 User ID 가 13579 인 사용자 정보를 조회하는 경우라면, '/user/:userId' 의 userId 는 request.params.userId 로 가져올 수 있습니다.
 
 ```
 app.get('/user/:userId', function (req, res) {
 
   console.log(req.params.userId + '의 정보를 가져옵니다');
-  
+
   // TODO 실제로 DB 에서 userId 에 해당하는 사용자 정보를 가져오는 로직을 개발해야 함
   var user = {
     userId: 13579,
@@ -57,35 +57,41 @@ app.get('/user/:userId', function (req, res) {
     email: 'yohany_AT_gmail.com',
     company: 'KossLAB'
   }
-  
+
   res.send(user);
 })
 ```
-
-
 
 ### body-parser 모듈
 
 POST 요청 처리시 데이터를 JSON 형식으로 파싱하여 req.body 를 통해 사용할 수 있도록 해주는 NPM 모듈입니다.
 
-모듈 설치를 위하여 아래와 같이 합니다. 
+모듈 설치를 위하여 아래와 같이 합니다.
 
 ```
 $ npm install --save body-parser
 ```
 
-그리고 server.js 에서 PUT 메소드 처리 부분을 아래와 같이 수정해서 테스트 합니다.
+그리고 server.js 에서 미들웨어를 추가 설정하고 PUT 메소드 처리 부분을 아래와 같이 수정해서 테스트 합니다.
 
 ```
+var bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({ extended: false }))
+
+...
+
 app.post('/user', function (req, res) {
 
   console.log('데이터 확인', req.body);
-  
+
   // TODO 실제로 DB 데이터를 저장하는 로직을 개발해야 함.
-  
+
   res.send({state: 'OK'});
 })
+...
 ```
+
+PUT, DELETE 역시 같은 방식으로 데이터를 전달 받을 수 있습니다.
 
 
 
