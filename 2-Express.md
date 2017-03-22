@@ -4,10 +4,10 @@
 
 Express 는 웹서버 및 API 서버를 개발할 수 있는 가장 많이 사용되고 있는 프레임워크 모듈입니다. Express 홈페이지에서 설명하고 있는 특징 몇가지를 살펴보면,
 
-* **Web Applications**
+* **Web Applications**  
   Express is a minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.
 
-* **APIs**
+* **APIs**  
   With a myriad of HTTP utility methods and middleware at your disposal, creating a robust API is quick and easy.
 
 * **Performance**  
@@ -17,8 +17,6 @@ Express 는 웹서버 및 API 서버를 개발할 수 있는 가장 많이 사�
   Many popular frameworks are based on Express.
 
 이제부터 Express 모듈을 사용하여 직접 웹서버를 개발해보도록 하겠습니다.
-
-
 
 ### 1. Repository 생성
 
@@ -31,7 +29,7 @@ Github 에서 New Repository 를 통해 프로젝트 리파지토기를 생성�
 * Add .gitignore : `Node`
 * Add a license : `MIT`
 
-위와 같이 리파지토리를 생성하면, 자동으로 `.gitignore`, `LICENSE`, `README.md` 파일이 생성됩니다. 
+위와 같이 리파지토리를 생성하면, 자동으로 `.gitignore`, `LICENSE`, `README.md` 파일이 생성됩니다.
 
 이제 `git clone` 으로 로컬 PC 에 복재해 오도록 하겠습니다.
 
@@ -41,8 +39,6 @@ $ cd sample-server
 ```
 
 `.gitignore` 는 Repository 에 업로드하지 말아야 하는 파일 또는 폴더명을 설정하는 파일입니다. 여기에 기록된 파일 또는 폴더는 업로드 되지 않습니다. `http://gitignore.io` 에서 보다 쉽게 `.gitignore` 파일 내용을 만들 수 있습니다.
-
-
 
 ### 2. npm init
 
