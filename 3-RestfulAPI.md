@@ -89,7 +89,7 @@ app.post('/user', function (req, res) {
 
   // TODO 실제로 DB 데이터를 저장하는 로직을 개발해야 함.
 
-  res.send({state: 'OK'});
+  res.send({state: 'OK', data: req.body});
 });
 ...
 ```
