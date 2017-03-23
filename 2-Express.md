@@ -143,11 +143,13 @@ $ node server.js
 
 ```js
 ...
-app.use(express.static('public'))
+app.use(express.static('public'));
 ...
 ```
 
 `use` 함수는 Express 의 middleware 를 사용하는 함수 입니다. 위의 코드는 Express에서 제공하는 `express.static` 미들웨어를 사용하여 static 서비스를 위한 폴더명을 지정하는 것입니다.
+
+이제 `http://localhost:3000/test/html` 에 접속하면 결과를 확인할 수 있습니다.
 
 ### 4. Middleware 구현하기
 
@@ -156,13 +158,13 @@ app.use(express.static('public'))
 ```js
 ...
 app.use(function (req, res, next) {
-  console.log('Time:', Date.now())
-  next()
+  console.log('Time:', Date.now());
+  next();
 })
 ...
 ```
 
-이제 모든 요청에 대하여 현재 시간을 서버를 시작한 표준출력으로 보여지게 됩니다.
+이제 `http://localhost:3000` 에 접속하면 요청에 대하여 현재 시간을 표준출력으로 보여지게 됩니다. \(static 파일 접속시에는 동작하지 않습니다.\)
 
 이외에도 Express 에서 기본으로 제공되는 Middleware 나 직접 Middleware 말고, 3rd party 에서 구현한 다양한 Middleware 도 사용할 수 있습니다.
 
