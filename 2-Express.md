@@ -1,10 +1,6 @@
 # Express
 
-
-
 > Fast, unopinionated, minimalist web framework for Node.js
-
-
 
 Express 는 웹서버 및 API 서버를 개발할 수 있는 가장 많이 사용되고 있는 프레임워크 모듈입니다. Express 홈페이지에서 설명하고 있는 특징 몇가지를 살펴보면,
 
@@ -92,16 +88,16 @@ Express 최신 버젼을 node\_modules 라는 폴더에 다운받았습니다. �
 웹서버를 구현 할 `server.js` 파일을 아래와 같이 작성합니다. 이 파일은 Node.js 의 내장 모듈인 `http` 를 사용하는 대신 Express 모듈을 사용하여 개발한 것입니다.
 
 ```js
-var express = require('express')
-var app = express()
+var express = require('express');
+var app = express();
 
 app.get('/', function (req, res) {
   res.send('Hello World!')
-})
+});
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
-})
+});
 ```
 
 `require` 로 모듈을 로딩할 때에는 가장 먼저 현재 폴더에서 express 모듈을 찾고, 없는 경우 node\_modules 폴더에서 express 모듈을 찾아 로딩하게 됩니다.
