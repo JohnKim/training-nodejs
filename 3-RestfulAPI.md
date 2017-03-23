@@ -18,19 +18,19 @@ HTTP Method 별 라우팅하는 함수는 `app.METHOD(PATH, HANDLER)` 입니다.
 ```js
 app.post('/user', function (req, res) {
   res.send('POST (Create) ');
-})
+});
 
 app.get('/user/:userId', function (req, res) {
   res.send('GET (Read) ');
-})
+});
 
 app.put('/user/:userId', function (req, res) {
   res.send('PUT (Update) ');
-})
+});
 
 app.delete('/user/:userId', function (req, res) {
   res.send('DELETE (Delete) ');
-})
+});
 ```
 
 개발한 서버에 직접 API 를 호출하여 테스트 하기 위해서 API 테스트 도구를 활용하면 어렵지 않게 할 수 있습니다.
@@ -58,10 +58,10 @@ app.get('/user/:userId', function (req, res) {
     name: 'John',
     email: 'yohany_AT_gmail.com',
     company: 'KossLAB'
-  }
+  };
 
   res.send(user);
-})
+});
 ```
 
 ### body-parser 모듈
@@ -79,7 +79,7 @@ $ npm install --save body-parser
 ```js
 var bodyParser = require('body-parser');
 
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: false }));
 
 ...
 
@@ -90,7 +90,7 @@ app.post('/user', function (req, res) {
   // TODO 실제로 DB 데이터를 저장하는 로직을 개발해야 함.
 
   res.send({state: 'OK'});
-})
+});
 ...
 ```
 
@@ -118,7 +118,7 @@ app.get('/user/search', function (req, res) {
 
   res.send(user);
 
-}
+});
 ```
 
 

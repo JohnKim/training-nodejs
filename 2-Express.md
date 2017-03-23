@@ -149,7 +149,7 @@ app.use(express.static('public'));
 
 `use` 함수는 Express 의 middleware 를 사용하는 함수 입니다. 위의 코드는 Express에서 제공하는 `express.static` 미들웨어를 사용하여 static 서비스를 위한 폴더명을 지정하는 것입니다.
 
-이제 `http://localhost:3000/test/html` 에 접속하면 결과를 확인할 수 있습니다.
+이제 `http://localhost:3000/test.html` 에 접속하면 결과를 확인할 수 있습니다.
 
 ### 4. Middleware 구현하기
 
