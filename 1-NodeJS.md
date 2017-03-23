@@ -39,7 +39,6 @@ Node.js 는 기본적으로 ES6을 지원합니다. ES6 문법에 대해서는 �
 
 ```js
 var http = require('http');
-var hello = require('./hello');
 
 var hostname = '127.0.0.1';
 var port = 3000;
