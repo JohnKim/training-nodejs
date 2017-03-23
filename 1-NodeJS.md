@@ -16,23 +16,23 @@ Node.js 의 사례 중 일부를 아래와 같이 소개 합니다.
 
 * 서버 어플리케이션
   * 웹페이지를 서비스 하는 서버, Restful API 서버 등
-  * Express.js \([http://expressjs.com/\](http://expressjs.com/%29\)
+  * Express.js \([http://expressjs.com](http://expressjs.com/%29\)\)
 * 응용 어플리케이션
   * OSX, Linux, Windows 에서 설치 및 실행되는 Desktop 어플리케이션
-  * Electron \([https://electron.atom.io/\](https://electron.atom.io/%29\)
+  * Electron \([https://electron.atom.io](https://electron.atom.io/%29\)\)
 * 개발 지원도구
-  * 웹개발 지원도구 : Bower \([https://bower.io/\](https://bower.io/%29\)
-  * 모바일 개발 지원도구 : React Native \([https://facebook.github.io/react-native/\](https://facebook.github.io/react-native/%29\)
+  * 웹개발 지원도구 : Bower \([https://bower.io](https://bower.io/%29\)\)
+  * 모바일 개발 지원도구 : React Native \([https://facebook.github.io/react-native](https://facebook.github.io/react-native/%29\)\)
 
 ### Node.js Version
 
 ![](https://raw.githubusercontent.com/nodejs/LTS/master/schedule.png)최신 버전을 사용하는 것도 좋지만, 안정적인 운영을 위해서라면, LTS 버전을 선택하는 것이 좋겠습니다.
 
-Node.js의 다양한 버전별 호환되지 않는 모듈을 사용하거나, 새로운 버전에 일부 동작하지 않는 경우가 발생하기도 합니다. 그러므로, 다양한 버전의 Node.js 설치하고 이를 관리하는 Node Version Manager \([https://github.com/creationix/nvm\](https://github.com/creationix/nvm%29\) 를 사용합니다. 다만 NVM 은 공식적으로 Windows 를 지원하지 않습니다.
+Node.js의 다양한 버전별 호환되지 않는 모듈을 사용하거나, 새로운 버전에 일부 동작하지 않는 경우가 발생하기도 합니다. 그러므로, 다양한 버전의 Node.js 설치하고 이를 관리하는 Node Version Manager \([https://github.com/creationix/nvm](https://github.com/creationix/nvm%29\)\)를 사용합니다. 다만 NVM 은 공식적으로 Windows 를 지원하지 않습니다.
 
 ### 간단한 웹 서버 개발 시작하기
 
-Node.js 는 기본적으로 ES6을 지원합니다. ES6 문법에 대해서는 어렵지 않게 관련 문서를 찾아 학습 할 수 있습니다. \([http://es6-features.org/](http://es6-features.org/) 참조\)
+Node.js 는 기본적으로 ES6을 지원합니다. ES6 문법에 대해서는 어렵지 않게 관련 문서를 찾아 학습 할 수 있습니다. \([http://es6-features.org](http://es6-features.org/) 참조\)
 
 간단한 웹서버 예제를 작성하고 실행해 보도록 합니다.  
 `server.js` 파일을 생성하고 아래와 같이 작성합니다.
@@ -96,8 +96,6 @@ server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
 ```
-
-
 
 만약 여러개의 함수를 제공하는 모듈을 만들기 위해서는 exports 를 사용합니다.
 
